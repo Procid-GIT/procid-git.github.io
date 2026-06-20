@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+a {
+    color:#61c4ec;
+}
+
+a:hover {
+    color:#f86666;
+}
+
+a:visited {
+    color:#8b53fb
+}
+
 body {
     font-family: monospace;
     background: linear-gradient(180deg, #221d30 0%, #47325d 100%);
@@ -85,7 +97,7 @@ main {
 }
 
 /* About Section */
-.About-Section {
+.card {
     min-height: auto;
     background: rgb(24, 37, 48);
     border-radius: 20px;
@@ -103,7 +115,16 @@ main {
     overflow: hidden; /* Clips the top red corners */
 }
 
-.About-Section.revealed {
+.buttons-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center, space-evenly;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.card.revealed {
     opacity: 1;
     transform: translateY(0);
 }
@@ -115,13 +136,6 @@ main {
     padding: 30px;
 }
 
-.about-content h2 {
-    font-size: 1.5rem;
-    color: #ea6666;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
 .about-content > p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -130,32 +144,13 @@ main {
     text-align: center;
 }
 
-.about_header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px; /* Increased slightly for better breathing room */
-    margin: 0;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: #541313;
-}
-
-.about_header > h2 {
-    font-size: 1.5rem;
-    color: #ea6666;
-    margin: 0;
-    text-align: center;
-    display: block;
-}
 
 .skills {
     overflow: hidden;
     margin-top: 40px;
     padding: 0px;
     background: #232d38;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 3px solid#6029cf;
     opacity: 0;
     transform: translateY(50px);
@@ -167,7 +162,7 @@ main {
     transform: translateY(0);
 }
 
-.header_skills {
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,7 +177,8 @@ main {
     
 }
 
-.header_skills > h3 {
+.header > h3,
+.header > h2 {
     color: #dc4343;
     display: block;
     text-align: center;
@@ -210,6 +206,36 @@ main {
 .skills li:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.js_stuff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.js_stuff button {
+    border-radius: 20px;
+    background-color: #084a6d;
+    border:3px solid #069ef0;
+    color: #069ef0;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    font-family: monospace;
+    transition: all 0.3s ease-out;
+}
+
+.js_stuff button:hover {
+    transform: translateY(-5px);
+    background-color:#f05d5d;
+    color:#000000;
+    border-color:#f05d5d;
+}
+
+.js_stuff button:active {
+    background-color: #9e1e40;
 }
 
 /* Animations */
