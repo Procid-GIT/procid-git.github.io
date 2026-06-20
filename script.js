@@ -29,6 +29,9 @@ const scrollTargets = {
     2: '#skills-section'      // Skills button
 };
 
+// loops through each button, and adds a listener for them
+// the listener then instructs each button to scroll to the target, in
+// scrolltargets, to then find each one and then scroll into view for each.
 buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
         const targetId = scrollTargets[index];
