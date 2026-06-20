@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: monospace;
     background: linear-gradient(180deg, #221d30 0%, #47325d 100%);
     min-height: 100vh;
     color: #333;
@@ -67,8 +67,9 @@ main {
 .Intro-Section button {
     padding: 12px 30px;
     font-size: 1.1rem;
+    font-family: monospace;
     border: none;
-    background-color: #374051;
+    background-color: #513737;
     color: #f86666;
     border-radius: 50px;
     cursor: pointer;
@@ -85,19 +86,21 @@ main {
 
 /* About Section */
 .About-Section {
-    min-height: 100vh;
+    min-height: auto;
     background: rgb(24, 37, 48);
     border-radius: 20px;
-    border-left: 4px solid#f86666;
-    padding: 60px 40px;
+    border: 3px solid #6029cf;
+    padding: 0; /* Keeps header flush to edges */
     margin-top: 50px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Stacks header above content */
+    align-items: stretch;   /* Forces header to fill full width */
+    justify-content: flex-start;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease-out;
+    overflow: hidden; /* Clips the top red corners */
 }
 
 .About-Section.revealed {
@@ -106,40 +109,88 @@ main {
 }
 
 .about-content {
+    width: 100%;
     max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
 }
 
 .about-content h2 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: #ea6666;
     margin-bottom: 30px;
     text-align: center;
 }
 
-.about-content p {
+.about-content > p {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 20px;
     color: #3b9bc7;
-    text-align: justify;
+    text-align: center;
+}
+
+.about_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px; /* Increased slightly for better breathing room */
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #541313;
+}
+
+.about_header > h2 {
+    font-size: 1.5rem;
+    color: #ea6666;
+    margin: 0;
+    text-align: center;
+    display: block;
 }
 
 .skills {
+    overflow: hidden;
     margin-top: 40px;
-    padding: 30px;
+    padding: 0px;
     background: #232d38;
     border-radius: 10px;
-    border-left: 4px solid #ea6666;
+    border: 3px solid#6029cf;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
 }
 
-.skills h3 {
-    color: #439fdc;
-    margin-bottom: 20px;
+.skills.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header_skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    padding: 30px;
+    color: #dc4343;
+    margin: 0;
+    margin-bottom: 5px;
     font-size: 1.5rem;
+    background-color: #541313;
+    
+}
+
+.header_skills > h3 {
+    color: #dc4343;
+    display: block;
+    text-align: center;
 }
 
 .skills ul {
     list-style: none;
+    padding: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -185,28 +236,3 @@ main {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .title h1 {
-        font-size: 2.5rem;
-    }
-
-    .Introduction {
-        font-size: 1.2rem;
-    }
-
-    .about-content h2 {
-        font-size: 2rem;
-    }
-
-    .about-content p {
-        font-size: 1rem;
-    }
-
-    .skills ul {
-        grid-template-columns: 1fr;
-    }
-
-    .About-Section {
-        padding: 40px 20px;
-    }
-}
