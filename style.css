@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #221d30 0%, #47325d 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+header {
+    padding: 40px 30px;
+    background-color: #4c2b67;
+}
+
+.header-link {
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.header-link:hover {
+    transform: scale(1.05);
+}
+
+.Header_Text {
+    color: #9f38f3;
+    font-family: monospace;
+    font-size: 35px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Intro Section */
+.Intro-Section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(93, 208, 243);
+    animation: fadeInDown 1s ease-out;
+}
+
+.title h1 {
+    color: #60c1e7;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.Introduction {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.Intro-Section button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    background-color: #374051;
+    color: #f86666;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.Intro-Section button:hover {
+    background-color: #ea6666;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* About Section */
+.About-Section {
+    min-height: 100vh;
+    background: rgb(24, 37, 48);
+    border-radius: 20px;
+    border-left: 4px solid#f86666;
+    padding: 60px 40px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.About-Section.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-content {
+    max-width: 800px;
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    color: #ea6666;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #3b9bc7;
+    text-align: justify;
+}
+
+.skills {
+    margin-top: 40px;
+    padding: 30px;
+    background: #232d38;
+    border-radius: 10px;
+    border-left: 4px solid #ea6666;
+}
+
+.skills h3 {
+    color: #439fdc;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.skills ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.skills li {
+    padding: 10px;
+    background: rgb(15, 24, 37);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #069ef0;
+    font-weight: 500;
+}
+
+.skills li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: 2.5rem;
+    }
+
+    .Introduction {
+        font-size: 1.2rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .skills ul {
+        grid-template-columns: 1fr;
+    }
+
+    .About-Section {
+        padding: 40px 20px;
+    }
+}
