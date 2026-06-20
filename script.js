@@ -27,7 +27,7 @@ document.querySelector('.Intro-Section button').addEventListener('click', () => 
     aboutSection.scrollIntoView({ behavior: 'smooth' });
 });
 
-const button = document.getElementByID('click_me');
+const button = document.getElementById('click_me');
 let count=0;
 
 
