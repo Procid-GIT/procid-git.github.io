@@ -21,10 +21,22 @@ window.addEventListener('scroll', revealOnScroll);
 // Trigger on page load in case element is already in view
 revealOnScroll();
 
-// Smooth scroll when About me button is clicked
-document.querySelector('.Intro-Section button').addEventListener('click', () => {
-    const aboutSection = document.querySelector('.card');
-    aboutSection.scrollIntoView({ behavior: 'smooth' });
+// Smooth scroll when buttons are clicked
+const buttons = document.querySelectorAll('.buttons-section button');
+const scrollTargets = {
+    0: '#about-section',      // About me button
+    1: '#projects-section',   // Projects button
+    2: '#skills-section'      // Skills button
+};
+
+buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const targetId = scrollTargets[index];
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
 
 const button = document.getElementById('click_me');
