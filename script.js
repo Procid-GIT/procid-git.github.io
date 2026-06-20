@@ -23,7 +23,7 @@ revealOnScroll();
 
 // Smooth scroll when About me button is clicked
 document.querySelector('.Intro-Section button').addEventListener('click', () => {
-    const aboutSection = document.querySelector('.About-Section');
+    const aboutSection = document.querySelector('.card');
     aboutSection.scrollIntoView({ behavior: 'smooth' });
 });
 
