@@ -26,3 +26,12 @@ document.querySelector('.Intro-Section button').addEventListener('click', () => 
     const aboutSection = document.querySelector('.About-Section');
     aboutSection.scrollIntoView({ behavior: 'smooth' });
 });
+
+const button = document.getElementByID('click_me');
+let count=0;
+
+
+button.addEventListener('click', ()=>{
+    count++;
+    button.textContent = "Times Clicked: " + count;
+})
