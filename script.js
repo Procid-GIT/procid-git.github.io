@@ -1,4 +1,5 @@
 // Note: Vibe coded, I told AI to make this and I understand it
+// lowkey, ai kinda designed the logic, im sorry :( if im kinda dumb like that
 // Scroll reveal animation
 const revealElements = document.querySelectorAll('.reveal');
 
@@ -26,7 +27,8 @@ const buttons = document.querySelectorAll('.buttons-section button');
 const scrollTargets = {
     0: '#about-section',      // About me button
     1: '#projects-section',   // Projects button
-    2: '#skills-section'      // Skills button
+    2: '#skills-section',      // Skills button
+    3: '#js'    //js stuff
 };
 
 // loops through each button, and adds a listener for them
